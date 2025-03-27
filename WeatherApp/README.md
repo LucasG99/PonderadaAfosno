@@ -6,6 +6,7 @@ Este é um projeto de demonstração que utiliza Blazor para exibir informaçõe
 
 - .NET 8.0 SDK
 - Visual Studio 2022 ou VS Code com extensões C#
+- Docker (para execução em container)
 
 ## Como Executar Localmente
 
@@ -15,17 +16,19 @@ git clone [URL_DO_SEU_REPOSITORIO]
 cd WeatherApp
 ```
 
-2. Restaure as dependências:
+2. Usando .NET diretamente:
 ```bash
 dotnet restore
-```
-
-3. Execute o projeto:
-```bash
 dotnet run
 ```
 
-4. Acesse a aplicação em `https://localhost:5001` ou `http://localhost:5000`
+3. Ou usando Docker:
+```bash
+docker build -t weatherapp .
+docker run -p 8080:8080 weatherapp
+```
+
+4. Acesse a aplicação em `http://localhost:8080`
 
 ## Executando os Testes
 
@@ -43,19 +46,19 @@ O projeto utiliza GitHub Actions para CI/CD com as seguintes etapas:
    - Restauração de dependências
    - Compilação do projeto
    - Execução de testes unitários
+   - Build da imagem Docker
 
-2. **Deploy**
-   - Deploy automático para o Render.com quando alterações são enviadas para a branch main
-   - Requer configuração do `RENDER_API_KEY` nos secrets do GitHub
-
-## Configuração do Deploy no Render.com
+## Deploy no Render.com
 
 1. Crie uma conta no [Render.com](https://render.com)
-2. Crie um novo Web Service
+2. Crie um novo Web Service e selecione "Docker" como runtime environment
 3. Conecte seu repositório GitHub
-4. Configure as seguintes variáveis de ambiente:
-   - `ASPNETCORE_ENVIRONMENT`: Production
-   - Outras variáveis específicas do seu ambiente
+4. Configure:
+   - Branch: main
+   - Root Directory: ./WeatherApp
+   - Docker Command: deixe vazio (será usado o Dockerfile)
+
+O deploy será automático sempre que houver um push na branch main.
 
 ## Estrutura do Projeto
 
@@ -63,6 +66,7 @@ O projeto utiliza GitHub Actions para CI/CD com as seguintes etapas:
 - `/Components/Pages` - Páginas da aplicação
 - `/WeatherApp.Tests` - Testes unitários
 - `/.github/workflows` - Configurações do GitHub Actions
+- `/Dockerfile` - Configuração do container Docker
 
 ## Contribuindo
 

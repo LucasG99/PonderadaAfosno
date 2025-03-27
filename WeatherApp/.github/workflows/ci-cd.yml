@@ -27,26 +27,5 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-  deploy:
-    needs: build-and-test
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
-        
-    - name: Build for Release
-      run: dotnet publish -c Release
-      
-    - name: Deploy to Render
-      env:
-        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-      run: |
-        # Aqui você precisará adicionar os comandos específicos para deploy no Render
-        # Isso pode variar dependendo da sua configuração no Render.com
-        echo "Deploy to Render would happen here" 
+    - name: Build Docker image
+      run: docker build -t weatherapp . 
