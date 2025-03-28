@@ -241,3 +241,56 @@ UnitTest1.cs: Arquivo de testes unitários
 Program.cs: ponto de entrada da aplicação
 
 WeatherApp.csproj: Arquivo de projeto principal.
+
+## Parte 3: Como Executar Localmente
+
+### 4. Como Executar Localmente
+
+#### 4.1 Clonando o Repositório
+
+Clone o repositório do GitHub:
+
+```bash
+git clone [URL_DO_SEU_REPOSITORIO]
+cd WeatherApp
+```
+
+#### 4.2 Usando o .NET CLI
+
+Restaure as dependências:
+
+```bash
+dotnet restore
+```
+
+Execute a aplicação:
+
+```bash
+dotnet run
+```
+
+Acesse a aplicação em [http://localhost:8080](http://localhost:8080).
+
+#### 4.3 Usando Docker
+
+Construa a imagem Docker:
+
+```bash
+docker build -t weatherapp .
+```
+
+Execute o container:
+
+```bash
+docker run -p 8080:8080 weatherapp
+```
+
+Acesse a aplicação em [http://localhost:8080](http://localhost:8080).
+
+#### 4.4 Descrição da Interface da Aplicação
+
+A aplicação possui uma interface simples com uma barra de navegação lateral à esquerda, contendo links para as páginas **"Home"**, **"Counter"** e **"Weather"**.
+
+- A página **"Counter"** exibe um título *"Counter"*, um texto indicando a contagem atual (inicialmente 0) e um botão azul com o texto *"Click me"* para incrementar o contador.
+- No canto superior direito, há um link *"About"*.
+
