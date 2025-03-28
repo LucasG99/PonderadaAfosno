@@ -1,77 +1,23 @@
 # WeatherApp - Aplicação Blazor de Previsão do Tempo
 
-Este é um projeto de demonstração que utiliza Blazor para exibir informações de previsão do tempo.
+## Resumo
 
-## Pré-requisitos
+Este documento apresenta a documentação técnica do projeto *WeatherApp, uma aplicação de demonstração desenvolvida com **Blazor* (Server-Side) para exibir informações de previsão do tempo. O projeto foi construído utilizando *.NET 8.0, com uma esteira de CI/CD completa via **GitHub Actions, testes unitários e deploy automatizado no **Render.com*. A aplicação é baseada no template padrão do Blazor Weather, com personalizações para atender aos requisitos do projeto.
 
-- .NET 8.0 SDK
-- Visual Studio 2022 ou VS Code com extensões C#
-- Docker (para execução em container)
+---
 
-## Como Executar Localmente
+## 1 Introdução
 
-1. Clone o repositório:
-```bash
-git clone [URL_DO_SEU_REPOSITORIO]
-cd WeatherApp
-```
+O *WeatherApp* é um projeto acadêmico e prático que demonstra o uso do framework *Blazor* para criar aplicações web interativas. A aplicação exibe informações de previsão do tempo e inclui uma página de contador como exemplo adicional de funcionalidade. Este documento detalha os pré-requisitos, a estrutura do projeto, instruções de execução, testes, pipeline de CI/CD e orientações para contribuições.
 
-2. Usando .NET diretamente:
-```bash
-dotnet restore
-dotnet run
-```
+## 2 Pré-requisitos
 
-3. Ou usando Docker:
-```bash
-docker build -t weatherapp .
-docker run -p 8080:8080 weatherapp
-```
+Para executar e contribuir com o projeto, é necessário ter as seguintes ferramentas instaladas:
 
-4. Acesse a aplicação em `http://localhost:8080`
+- *.NET 8.0 SDK*: Disponível em [https://dotnet.microsoft.com/en-us/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+- *Visual Studio 2022* ou *VS Code* com extensões para C# (ex.: C# for Visual Studio Code).
+- *Docker*: Necessário para execução em container (opcional).
+- *Git*: Para clonar o repositório e gerenciar o controle de versão.
+- Conta no *Render.com* ou *Railway.app* para deploy.
 
-## Executando os Testes
-
-Para executar os testes unitários:
-
-```bash
-dotnet test
-```
-
-## CI/CD Pipeline
-
-O projeto utiliza GitHub Actions para CI/CD com as seguintes etapas:
-
-1. **Build e Teste**
-   - Restauração de dependências
-   - Compilação do projeto
-   - Execução de testes unitários
-   - Build da imagem Docker
-
-## Deploy no Render.com
-
-1. Crie uma conta no [Render.com](https://render.com)
-2. Crie um novo Web Service e selecione "Docker" como runtime environment
-3. Conecte seu repositório GitHub
-4. Configure:
-   - Branch: main
-   - Root Directory: ./WeatherApp
-   - Docker Command: deixe vazio (será usado o Dockerfile)
-
-O deploy será automático sempre que houver um push na branch main.
-
-## Estrutura do Projeto
-
-- `/Components` - Componentes Blazor
-- `/Components/Pages` - Páginas da aplicação
-- `/WeatherApp.Tests` - Testes unitários
-- `/.github/workflows` - Configurações do GitHub Actions
-- `/Dockerfile` - Configuração do container Docker
-
-## Contribuindo
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request 
+---
