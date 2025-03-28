@@ -20,4 +20,224 @@ Para executar e contribuir com o projeto, é necessário ter as seguintes ferram
 - *Git*: Para clonar o repositório e gerenciar o controle de versão.
 - Conta no *Render.com* ou *Railway.app* para deploy.
 
----
+## 3 Estrutura do Projeto
+
+A estrutura de pastas do projeto é organizada para facilitar o desenvolvimento e a manutenção. Abaixo está a representação textual da estrutura de pastas, conforme visualizada no ambiente de desenvolvimento:
+
+WeatherApp/
+
+├── .github/
+
+│   └── workflows/
+
+│       └── ci-cd.yml
+
+├── Components/
+
+│   ├── layout/
+
+│   │   ├── MainLayout.razor
+
+│   │   ├── MainLayout.razor.css
+
+│   │   ├── NavMenu.razor
+
+│   │   └── NavMenu.razor.css
+
+│   ├── Pages/
+
+│   │   ├── Counter.razor
+
+│   │   ├── Error.razor
+
+│   │   ├── Home.razor
+
+│   │   ├── Weather.razor
+
+│   │   ├── Imports.razor
+
+│   │   └── App.razor
+
+│   └── Routes.razor
+
+├── obj/
+
+│   ├── project.assets.json
+
+│   ├── project.nuget.cache
+
+│   ├── WeatherApp.csproj.nuget.dgspec.json
+
+│   ├── WeatherApp.csproj.nuget.g.props
+
+│   └── WeatherApp.csproj.nuget.g.targets
+
+├── Properties/
+
+│   └── launchSettings.json
+
+├── WeatherApp.Tests/
+
+│   ├── obj/
+
+│   │   ├── project.assets.json
+
+│   │   ├── project.nuget.cache
+
+│   │   ├── WeatherApp.Tests.csproj.nuget.d...
+
+│   │   ├── WeatherApp.Tests.csproj.nuget.g...
+
+│   │   └── WeatherApp.Tests.csproj.nuget.g...
+
+│   ├── UnitTest1.cs
+
+│   └── WeatherApp.Tests.csproj
+
+├── wwwroot/
+
+│   ├── bootstrap/
+
+│   │   ├── css/
+
+│   │   │   ├── bootstrap-grid.css
+
+│   │   │   ├── bootstrap-grid.css.map
+
+│   │   │   ├── bootstrap-grid.min.css
+
+│   │   │   ├── bootstrap-grid.min.css.map
+
+│   │   │   ├── bootstrap-grid.rtl.css
+
+│   │   │   ├── bootstrap-grid.rtl.css.map
+
+│   │   │   ├── bootstrap-grid.rtl.min.css
+
+│   │   │   ├── bootstrap-grid.rtl.min.css.map
+
+│   │   │   ├── bootstrap-reboot.css
+
+│   │   │   ├── bootstrap-reboot.css.map
+
+│   │   │   ├── bootstrap-reboot.min.css
+
+│   │   │   ├── bootstrap-reboot.min.css.map
+
+│   │   │   ├── bootstrap-reboot.rtl.css
+
+│   │   │   ├── bootstrap-reboot.rtl.css.map
+
+│   │   │   ├── bootstrap-reboot.rtl.min.css
+
+│   │   │   ├── bootstrap-reboot.rtl.min.css.map
+
+│   │   │   ├── bootstrap-utilities.css
+
+│   │   │   ├── bootstrap-utilities.css.map
+
+│   │   │   ├── bootstrap-utilities.min.css
+
+│   │   │   ├── bootstrap-utilities.min.css.map
+
+│   │   │   ├── bootstrap-utilities.rtl.css
+
+│   │   │   ├── bootstrap-utilities.rtl.css.map
+
+│   │   │   ├── bootstrap-utilities.rtl.min.css
+
+│   │   │   ├── bootstrap-utilities.rtl.min.css.map
+
+│   │   │   ├── bootstrap.css
+
+│   │   │   ├── bootstrap.css.map
+
+│   │   │   ├── bootstrap.min.css
+
+│   │   │   ├── bootstrap.min.css.map
+
+│   │   │   ├── bootstrap.rtl.css
+
+│   │   │   ├── bootstrap.rtl.css.map
+
+│   │   │   ├── bootstrap.rtl.min.css
+
+│   │   │   └── bootstrap.rtl.min.css.map
+
+│   │   └── js/
+
+│   │       ├── bootstrap.bundle.js
+
+│   │       ├── bootstrap.bundle.js.map
+
+│   │       ├── bootstrap.bundle.min.js
+
+│   │       ├── bootstrap.bundle.min.js.map
+
+│   │       ├── bootstrap.esm.js
+
+│   │       ├── bootstrap.esm.js.map
+
+│   │       ├── bootstrap.esm.min.js
+
+│   │       ├── bootstrap.esm.min.js.map
+
+│   │       ├── bootstrap.js
+
+│   │       ├── bootstrap.js.map
+
+│   │       ├── bootstrap.min.js
+
+│   │       └── bootstrap.min.js.map
+
+│   ├── css/
+
+│   │   ├── app.css
+
+│   │   └── favicon.png
+
+│   ├── dockerignore
+
+│   ├── appsettings.Development.json
+
+│   ├── appsettings.json
+
+│   └── Dockerfile
+
+├── Program.cs
+
+├── README.md
+
+└── WeatherApp.csproj
+
+3.1 Descrição das Principas Pastas e Arquivos
+
+/.github/workflows: Contém o arquivo ci-cd.yml para a pipeline de CI/CD.
+
+/Components: componentes reutilizáveis do Blazor
+
+/Pages: Páginas da aplicação, como Counter.razor, Home.razor, e Weather.razor
+
+MainLayout.razor: Layout principal da aplicação.
+
+NavMenu.razor: Componente de navegação lateral.
+
+/Properties: Configurações do projeto, como launchSettings.json.
+
+/wwwroot: Arquivos estáticos, como CSS e JavaScript.
+
+/css: Estilos da aplicação, incluindo arquivos do Bootstrap.
+
+/lib/bootstrap: Biblioteca Bootstrap para estilização
+
+/WeatherApp.Tests: Testes unitários do projeto
+
+WeatherApp.Tests.csproj: Arquivo de projeto para os testes.
+
+UnitTest1.cs: Arquivo de testes unitários
+
+/Dockerfile: Arquivo de configuração para criar a imagem Docker.
+
+Program.cs: ponto de entrada da aplicação
+
+WeatherApp.csproj: Arquivo de projeto principal.
