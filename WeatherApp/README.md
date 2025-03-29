@@ -294,3 +294,72 @@ A aplicação possui uma interface simples com uma barra de navegação lateral 
 - A página **"Counter"** exibe um título *"Counter"*, um texto indicando a contagem atual (inicialmente 0) e um botão azul com o texto *"Click me"* para incrementar o contador.
 - No canto superior direito, há um link *"About"*.
 
+## Parte 4: Testes e Pipeline de CI/CD
+
+### 5. Executando os Testes
+
+O projeto inclui testes unitários localizados na pasta `/WeatherApp.Tests`. Para executá-los:
+
+1. Navegue até o diretório raiz do projeto.
+2. Execute o comando:
+
+```bash
+dotnet test
+```
+
+Os testes verificam a funcionalidade do controlador de previsão do tempo (`WeatherController`).
+
+---
+
+### 6. Pipeline de CI/CD
+
+O projeto utiliza **GitHub Actions** para automatizar o processo de integração contínua (CI) e entrega contínua (CD). A pipeline é definida no arquivo `.github/workflows/ci-cd.yml`.
+
+#### 6.1 Etapas da Pipeline
+
+- **Restauração de Dependências**: Restaura as dependências do projeto.
+- **Compilação do Projeto**: Compila a aplicação para garantir que não há erros.
+- **Execução de Testes Unitários**: Executa os testes unitários para validar a funcionalidade.
+- **Build da Imagem Docker**: Constrói a imagem Docker com base no Dockerfile.
+- **Deploy no Render.com**: Faz o deploy da imagem Docker no Render.com.
+
+#### 6.2 Configuração no Render.com
+
+1. Crie uma conta no [Render.com](https://render.com).
+2. Crie um novo **Web Service** e selecione **"Docker"** como ambiente de execução.
+3. Conecte seu repositório GitHub.
+4. Configure as seguintes opções:
+   - **Branch**: `main`
+   - **Root Directory**: `./WeatherApp`
+   - **Docker Command**: Deixe vazio (o Dockerfile será usado automaticamente).
+
+O deploy será realizado automaticamente sempre que houver um push na branch `main`.
+
+---
+
+## Parte 5: Contribuição, Conclusão e Referências
+
+### 7. Contribuindo
+
+Para contribuir com o projeto, siga os passos abaixo:
+
+1. Faça um fork do projeto no GitHub.
+2. Crie uma branch para sua feature:
+
+```bash
+git checkout -b feature/AmazingFeature
+```
+
+3. Commit suas mudanças:
+
+```bash
+git commit -m 'Add some AmazingFeature'
+```
+
+4. Faça o push para a branch:
+
+```bash
+git push origin feature/AmazingFeature
+```
+
+5. Abra um **Pull Request** no repositório original.
